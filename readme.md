@@ -1,3 +1,5 @@
+# This repo has been cloned and modified to demonstrate a minimal reproducible example of an [upload-artifact action bug](https://github.com/actions/upload-artifact/issues/573) 
+
 # cleanCppProject
 
 ![Build Status](https://travis-ci.org/kracejic/cleanCppProject.svg?branch=master)
