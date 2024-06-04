@@ -61,7 +61,11 @@ if(WIN32 AND NOT UNIX)
 elseif(APPLE)
     #--------------------------------------------------------------------------
     # Apple specific
-    set(CPACK_GENERATOR "DragNDrop")
+    set(CPACK_GENERATOR 
+        TGZ 
+        #DragNDrop
+    )
+
     set(CPACK_PACKAGING_INSTALL_PREFIX "/")
 
     set(MACOSX_BUNDLE_BUNDLE_NAME ${CPACK_PACKAGE_NAME})
