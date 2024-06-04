@@ -62,8 +62,8 @@ elseif(APPLE)
     #--------------------------------------------------------------------------
     # Apple specific
     set(CPACK_GENERATOR 
-        TGZ 
-        #DragNDrop
+        #TGZ 
+        DragNDrop
     )
 
     set(CPACK_PACKAGING_INSTALL_PREFIX "/")
