@@ -25,7 +25,7 @@ jobs:
       # 4. MacOS, Intel Silicon, x64, latest Clang compiler toolchain on the default runner image, default generator
       # TODO: 5. MacOS, Apple Silicon (macos-14/latest), x64, latest Clang compiler toolchain on the default runner image, default generator
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-13]
+        os: [macos-13]
         architecture: [x64, win32]
         include:
 #          - os: windows-latest
@@ -131,6 +131,16 @@ jobs:
     # Build package into the build/out/ directory
     - name: Package
       run: cpack --config build/CPackConfig.cmake -C ${{ env.build_type }}
+
+    - name: Show path information.
+      run: |
+            local dir="build/out"
+            while IFS= read -r -d '' path; do
+                real_path=$(realpath "$path")
+                echo "Path: $path"
+                echo "Realpath: $real_path"
+                echo
+            done < <(find "$dir" -print0)
 
     - name: Upload package
       uses: actions/upload-artifact@v4
