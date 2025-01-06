@@ -134,7 +134,7 @@ jobs:
 
     - name: Show path information.
       run: |
-            local dir="build/out"
+            dir="build/out"
             while IFS= read -r -d '' path; do
                 real_path=$(realpath "$path")
                 echo "Path: $path"
